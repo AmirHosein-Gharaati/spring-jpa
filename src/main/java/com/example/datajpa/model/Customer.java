@@ -18,6 +18,7 @@ public class Customer {
             strategy = GenerationType.SEQUENCE,
             generator = "customer_sequence"
     )
+    @Column(name = "id")
     private Long id;
 
     @Column(nullable = false)
