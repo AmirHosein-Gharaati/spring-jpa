@@ -3,7 +3,9 @@ package com.example.datajpa.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
+import java.util.Date;
 import java.util.List;
 
 @Table(name = "order_table")
@@ -42,4 +44,9 @@ public class Order {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE}
     )
     private List<OrderItem> orderItems;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(nullable = false, updatable = false)
+    @CreatedDate
+    private Date createdAt;
 }
