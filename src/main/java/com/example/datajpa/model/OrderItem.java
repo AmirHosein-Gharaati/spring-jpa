@@ -37,4 +37,15 @@ public class OrderItem {
             )
     )
     private Order order;
+
+    @OneToOne
+    @JoinColumn(
+            name = "product_id",
+            nullable = false,
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(
+                    name = "order_item_product_fk"
+            )
+    )
+    private Product product;
 }
