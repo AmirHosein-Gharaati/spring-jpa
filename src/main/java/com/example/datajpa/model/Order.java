@@ -1,11 +1,15 @@
 package com.example.datajpa.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Table(name = "order_table")
 @Entity(name = "Order")
 @NoArgsConstructor
+@Getter
 public class Order {
     @Id
     @SequenceGenerator(
@@ -31,4 +35,11 @@ public class Order {
             )
     )
     private Customer customer;
+
+    @OneToMany(
+            orphanRemoval = true,
+            mappedBy = "order",
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE}
+    )
+    private List<OrderItem> orderItems;
 }
