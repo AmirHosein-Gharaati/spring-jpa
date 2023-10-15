@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Table(name = "product")
 @Entity(name = "Product")
 @Getter
@@ -36,4 +38,10 @@ public class Product {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE}
     )
     private OrderItem orderItem;
+
+    @OneToMany(
+            mappedBy = "product",
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE}
+    )
+    Set<ProductCategory> productCategories;
 }

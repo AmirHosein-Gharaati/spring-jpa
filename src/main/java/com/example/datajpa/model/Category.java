@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Table(name = "category")
 @Entity(name = "Category")
 @NoArgsConstructor
@@ -23,4 +25,10 @@ public class Category {
 
     @Column(nullable = false)
     private String name;
+
+    @OneToMany(
+            mappedBy = "category",
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE}
+    )
+    private List<ProductCategory> productCategories;
 }
