@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Table(name = "order_table")
@@ -25,7 +25,9 @@ public class Order {
     @Column
     private Long id;
 
-    @Column(nullable = false)
+    @Column(
+            nullable = false
+    )
     private int totalPrice;
 
     @OneToOne
@@ -46,7 +48,11 @@ public class Order {
     private List<OrderItem> orderItems;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false, updatable = false)
+    @Column(
+            nullable = false,
+            updatable = false,
+            columnDefinition = "TIMESTAMP WITHOUT TIME ZONE"
+    )
     @CreatedDate
-    private Date createdAt;
+    private LocalDateTime createdAt;
 }
