@@ -1,4 +1,4 @@
-package com.example.datajpa.model;
+package com.example.datajpa.model.productcategory;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

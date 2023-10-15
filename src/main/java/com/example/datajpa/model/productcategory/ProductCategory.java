@@ -1,5 +1,7 @@
-package com.example.datajpa.model;
+package com.example.datajpa.model.productcategory;
 
+import com.example.datajpa.model.Category;
+import com.example.datajpa.model.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 

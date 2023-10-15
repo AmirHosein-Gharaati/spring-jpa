@@ -1,5 +1,6 @@
 package com.example.datajpa.model;
 
+import com.example.datajpa.model.productcategory.ProductCategory;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
