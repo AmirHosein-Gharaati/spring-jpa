@@ -4,6 +4,8 @@
 
 Welcome to the repository for the code examples associated with my article on Spring Boot and Spring Data JPA. This repository contains the source code, configuration files, and any additional resources discussed in the article.
 
+You can see the design table [here](./assets/spring-jpa-design). Open it with [draw.io](https://draw.io) application.
+
 ## Installation
 
 + Install the dependencies in `pom.xml` file.
