@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity(name = "Customer")
 @Table(name = "customer")
 @Getter
@@ -31,4 +33,11 @@ public class Customer {
     private String email;
 
     private String address;
+
+    @OneToMany(
+            orphanRemoval = true,
+            mappedBy = "customer",
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE}
+    )
+    private List<Order> orders;
 }

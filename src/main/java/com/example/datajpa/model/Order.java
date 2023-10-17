@@ -30,12 +30,13 @@ public class Order {
     )
     private int totalPrice;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(
             name = "customer_id",
+            nullable = false,
             referencedColumnName = "id",
             foreignKey = @ForeignKey(
-                    name = "customer_id_fk"
+                    name = "order_customer_fk"
             )
     )
     private Customer customer;
