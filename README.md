@@ -6,6 +6,8 @@ Welcome to the repository for the code examples associated with my article on Sp
 
 You can see the design table [here](./assets/spring-jpa-design). Open it with [draw.io](https://draw.io) application.
 
+![Schema Table](./assets/spring-jpa-design.jpg)
+
 ## Installation
 
 + Install the dependencies in `pom.xml` file.
